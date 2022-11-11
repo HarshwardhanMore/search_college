@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'stylesheets/home.css' %}">
+
+    <style>
+        html{
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .main{
+            background-color: black;
+            width: 100vw;
+            height: 91vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="main">
+
+        <div>
+            <h1>Home - Search for college here!</h1>
+            <a href="home">Click here to view all colleges</a>
+        </div>
+
+    </div>
+
+  
+{% endblock content %}

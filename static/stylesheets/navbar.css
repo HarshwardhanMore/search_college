@@ -1,0 +1,17 @@
+.navbar{
+    background-color: blue;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: inline;
+}
+
+.search_college{
+    margin-right: 150px;
+    display: inline;
+    width: 200px;
+}

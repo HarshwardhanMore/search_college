@@ -1,0 +1,136 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'stylesheets/search_colleges.css' %}">
+<!-- ---------------------------------------------------------------------- -->
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        .heading{
+            margin: 25px 0px;
+        }
+        .table1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 100vw;
+        }
+        .table1_row{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* background-color: rgb(211, 211, 211); */
+            background-color: rgba(217, 217, 217, 0.086);
+            color: white;
+            margin: 10px;
+            padding: 10px 0px;
+            /* width: 96%; */
+        }
+        .table1_data_heading{
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+        .table1_data_heading>*{
+        }
+
+
+        .table1_row > *{
+            padding: 0px 20px;
+        }
+        .table1_data1{
+            width: 10%;
+        }
+        .table1_data2{
+            width: 30%;
+        }
+        .table1_data3{
+            width: 15%;
+        }
+        .table1_data4{
+            width: 15%;
+        }
+        .table1_data5{
+            width: 15%;
+        }
+        .table1_data6{
+            width: 15%;
+        }
+    </style>
+<!-- ---------------------------------------------------------------------- -->
+    {% if item_searched %}
+    <h1 class="heading" style="text-align: center;">
+        Searched for {{ item_searched }}
+    </h1>
+
+    <table class="table1">
+        
+            <div class="table1_row table1_data_heading">
+                    <div class="table1_data1">College code</div>
+                    <div class="table1_data2">College name</div>
+                    <div class="table1_data3">Branch code</div>
+                    <div class="table1_data4">Branch name</div>
+                    <div class="table1_data5">Status</div>
+                    <div class="table1_data6">Percentile cutoff (Open)</div>
+            </div>
+
+    {% if percentile_entered_float %}   
+        {% for college in colleges %}
+            
+                {% if college.open_percentile <= percentile_entered_float %}
+                
+                    <div class="table1_row">
+                            <div class="table1_data1">{{college.college_code}}</div>
+                            <div class="table1_data2">{{college.college_name}}</div>
+                            <div class="table1_data3">{{college.branch_code}}</div>
+                            <div class="table1_data4">{{college.branch_name}}</div>
+                            <div class="table1_data5">{{college.status_category}}</div>
+                            <div class="table1_data6">{{college.open_percentile}}</div>
+                    </div>
+                {% endif %}
+        {% endfor %}
+    {% else %}
+        {% for college in colleges %}
+            
+                <div class="table1_row">
+                        <div class="table1_data1">{{college.college_code}}</div>
+                        <div class="table1_data2">{{college.college_name}}</div>
+                        <div class="table1_data3">{{college.branch_code}}</div>
+                        <div class="table1_data4">{{college.branch_name}}</div>
+                        <div class="table1_data5">{{college.status_category}}</div>
+                        <div class="table1_data6">{{college.open_percentile}}</div>
+                </div>
+
+        {% endfor %}  
+    {% endif %}
+    </table>
+ 
+    {% else %}
+    <h1 style="text-align: center;">
+        Search for a College
+    </h1>
+        {% for college in colleges %}
+                
+                    {% if college.open_percentile <= percentile_entered_float %}
+                    
+                        <div class="table1_row">
+                                <div class="table1_data1">{{college.college_code}}</div>
+                                <div class="table1_data2">{{college.college_name}}</div>
+                                <div class="table1_data3">{{college.branch_code}}</div>
+                                <div class="table1_data4">{{college.branch_name}}</div>
+                                <div class="table1_data5">{{college.status_category}}</div>
+                                <div class="table1_data6">{{college.open_percentile}}</div>
+                        </div>
+                    {% endif %}
+            {% endfor %}
+    {% endif %}
+
+{% endblock content %}

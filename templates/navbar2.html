@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+
+
+    <link rel="stylesheet" href="{% static 'stylesheets/navbar.css' %}">
+    
+</head>
+<body>
+    
+    <div class="navbar">
+
+        <div class="navitemlist1"> <a href="home"> Virtual Model Builder </a> </div>
+
+        <ul class="navitemlist2">
+            <li class="navitems"> <a href="home"> Home </a> </li>
+
+            {% comment %} <li class="navitems dropdown">
+                <button class="dropbtn">Datasets</button>
+                <div class="dropdown-content">
+                  <a href="seeavailabledatasets">See/Download Available Datas</a>
+                  <a href="useavailabledatasets">Use Available Datasets</a>
+                </div> 
+            </li> {% endcomment %}
+
+            <li class="navitems"> <a href="seeavailabledatasets">Datasets</a> </li>
+
+
+            <li class="navitems"> <a href="documentations"> Documentation </a> </li>
+            <li class="navitems"> <a href="rateus"> Rate us </a> </li>
+        </ul>
+
+        <ul class="navitemlist3">
+            <li class="sociallinks"><a href=""> <img src="{% static 'images/linkedin_icon.png' %}" alt="In"> </a></li>
+            <li class="sociallinks"><a href=""> <img src="{% static 'images/facebook_icon.png' %}" alt="In"> </a></li>
+            <li class="sociallinks"><a href=""> <img src="{% static 'images/instagram_icon.png' %}" alt="In"> </a></li>
+        </ul>
+
+
+    </div>
+
+
+    
+
+
+
+    {% block body %}
+      
+    {% endblock body %}
+
+
+
+</body>
+</html>
