@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%6)xs_r952ch0#+bz2cvu103%o$laqf=j)v$m$kjchh1mi=_z+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['searchmycollege.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = [ 'searchcollege.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'search_college.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,5 +125,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR,'static')
 ]
