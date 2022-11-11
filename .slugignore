@@ -1,0 +1,9 @@
+~ $ du -ha --max-depth 1 /app | sort -hr
+108M    /app
+99M     /app/vendor
+8.1M    /app/.heroku
+448K    /app/lib
+292K    /app/spec
+8.0K    /app/Gemfile.lock
+4.0K    /app/Procfile
+4.0K    /app/Gemfile
